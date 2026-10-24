@@ -1,0 +1,7 @@
+@EndUserText.label: 'Attendance UI service deffinition'
+define service ZUI_AT_SRV {
+  expose ZC_AT_ATT        as Attendances;
+  expose ZC_AT_EMPLOYEE   as Employees;
+  expose ZC_AT_CONTRACT   as Contracts;
+  expose ZC_AT_DEPARTMENT as Departments;
+}

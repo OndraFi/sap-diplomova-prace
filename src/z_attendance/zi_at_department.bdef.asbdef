@@ -1,0 +1,23 @@
+managed implementation in class zbp_i_at_department unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_AT_DEPARTMENT alias Department
+persistent table zat_department
+draft table ZAT_DEPARTMENTD
+lock master total etag last_changed_at
+authorization master ( global )
+//etag master <field_name>
+{
+  field (readonly, numbering : managed) departmentID;
+  field(mandatory) name;
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+}
